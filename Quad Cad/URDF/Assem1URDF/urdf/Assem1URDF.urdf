@@ -1,0 +1,467 @@
+<robot
+  name="Assem1URDF">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.13267 0.16017 0.23431"
+        rpy="0 0 0" />
+      <mass
+        value="2.5721" />
+      <inertia
+        ixx="0.03327"
+        ixy="0.00022821"
+        ixz="6.7772E-05"
+        iyy="0.069604"
+        iyz="-2.8438E-05"
+        izz="0.036718" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.77647 0.81569 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="RBT">
+    <inertial>
+      <origin
+        xyz="0.041339 -0.0033569 0.10038"
+        rpy="0 0 0" />
+      <mass
+        value="0.59865" />
+      <inertia
+        ixx="0.00022588"
+        ixy="-1.7655E-05"
+        ixz="4.8593E-05"
+        iyy="0.00023755"
+        iyz="5.0544E-05"
+        izz="5.3418E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RBT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86667 0.86667 0.8902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RBT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightBackThigh"
+    type="continuous">
+    <origin
+      xyz="-0.24691 -0.016158 0.16403"
+      rpy="-2.9685 -6.123E-17 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="RBT" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="RBC">
+    <inertial>
+      <origin
+        xyz="-0.054114 0.16005 0.015143"
+        rpy="0 0 0" />
+      <mass
+        value="0.071245" />
+      <inertia
+        ixx="2.2544E-05"
+        ixy="1.3748E-06"
+        ixz="2.2552E-07"
+        iyy="6.7683E-07"
+        iyz="-3.6012E-06"
+        izz="2.204E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RBC.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86667 0.86667 0.8902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RBC.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightBackCalf"
+    type="continuous">
+    <origin
+      xyz="0.0738 0 0"
+      rpy="1.5708 0.42618 1.5708" />
+    <parent
+      link="RBT" />
+    <child
+      link="RBC" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="RFT">
+    <inertial>
+      <origin
+        xyz="-0.037222 -0.093284 -0.041339"
+        rpy="0 0 0" />
+      <mass
+        value="0.59865" />
+      <inertia
+        ixx="0.00018408"
+        ixy="-9.768E-05"
+        ixz="3.3097E-05"
+        iyy="0.00010689"
+        iyz="3.9718E-05"
+        izz="0.00022588" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RFT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86667 0.86667 0.8902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RFT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightFrontThigh"
+    type="continuous">
+    <origin
+      xyz="-0.022914 -0.016158 0.16203"
+      rpy="1.5708 -0.40569 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="RFT" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="RFC">
+    <inertial>
+      <origin
+        xyz="-0.015143 -0.1016 0.13498"
+        rpy="0 0 0" />
+      <mass
+        value="0.071245" />
+      <inertia
+        ixx="2.204E-05"
+        ixy="-2.846E-06"
+        ixz="2.2181E-06"
+        iyy="8.9192E-06"
+        iyz="1.0686E-05"
+        izz="1.4302E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RFC.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86667 0.86667 0.8902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/RFC.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RightFrontCalf"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.0738"
+      rpy="2.4621 -1.5708 0" />
+    <parent
+      link="RFT" />
+    <child
+      link="RFC" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="LFT">
+    <inertial>
+      <origin
+        xyz="0.057461 -0.00076535 0.10445"
+        rpy="0 0 0" />
+      <mass
+        value="0.59865" />
+      <inertia
+        ixx="0.00022661"
+        ixy="1.8845E-05"
+        ixz="-4.8236E-05"
+        iyy="0.00023577"
+        iyz="5.5049E-05"
+        izz="5.5932E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LFT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86667 0.86667 0.8902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LFT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftFrontThigh"
+    type="continuous">
+    <origin
+      xyz="-0.022059110505708 -0.351033039401595 0.15758942560064"
+      rpy="-2.98034865602211 -6.12303176911189E-17 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="LFT" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="LFC">
+    <inertial>
+      <origin
+        xyz="-0.016857 -0.022053 0.17269"
+        rpy="0 0 0" />
+      <mass
+        value="0.071245" />
+      <inertia
+        ixx="2.2112E-05"
+        ixy="1.1852E-06"
+        ixz="-3.4143E-06"
+        iyy="2.0324E-05"
+        iyz="6.8503E-06"
+        izz="2.9687E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LFC.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.86667 0.86667 0.8902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LFC.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftFrontCalf"
+    type="continuous">
+    <origin
+      xyz="-0.007 0 0"
+      rpy="-0.037806 0 3.1416" />
+    <parent
+      link="LFT" />
+    <child
+      link="LFC" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="LBT">
+    <inertial>
+      <origin
+        xyz="0.0574613729462557 0.104130398290294 -0.00822721385878156"
+        rpy="0 0 0" />
+      <mass
+        value="0.598647188023967" />
+      <inertia
+        ixx="0.00022660977781291"
+        ixy="-4.96787698936054E-05"
+        ixz="-1.46236618602005E-05"
+        iyy="4.78232134186188E-05"
+        iyz="-3.88131014442757E-05"
+        izz="0.000243877178914602" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LBT.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LBT.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftBackThigh"
+    type="continuous">
+    <origin
+      xyz="-0.25137 -0.35103 0.1593"
+      rpy="-2.1519 -6.123E-17 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="LBT" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="LBC">
+    <inertial>
+      <origin
+        xyz="-0.0168573376488852 -0.17014734912298 -0.0368339122598292"
+        rpy="0 0 0" />
+      <mass
+        value="0.0712454052693922" />
+      <inertia
+        ixx="2.21116354308369E-05"
+        ixy="3.29961175832391E-06"
+        ixz="1.47467321431479E-06"
+        iyy="4.27201953617011E-06"
+        iyz="-8.23695197422103E-06"
+        izz="1.90210842564751E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LBC.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.866666666666667 0.866666666666667 0.890196078431373 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem1URDF/meshes/LBC.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LeftBackCalf"
+    type="continuous">
+    <origin
+      xyz="-0.007 0 0"
+      rpy="-0.037806 0 3.1416" />
+    <parent
+      link="LBT" />
+    <child
+      link="LBC" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+</robot>
